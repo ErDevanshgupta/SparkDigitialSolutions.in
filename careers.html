@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | Spark Digital Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* BASE */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #0f1120;
+  color: #ffffffcc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADINGS & TEXT */
+h1 {
+  text-align: center;
+  color: #62e1e9;
+  font-size: 2.5rem;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: #cccccc;
+}
+
+/* NAVBAR */
+header,
+.navbar {
+  background-color: #0f1120 !important;
+}
+
+.navbar {
+  padding: 15px 30px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 40px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.brand-slogan {
+  color: #62e1e9;
+  font-size: 0.85em;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Underline animation */
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #62e1e9;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #62e1e9;
+}
+
+/* MOBILE NAV */
+.menu-icon {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0f1120;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 60px 20px;
+  flex: 1;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* JOBS GRID */
+.jobs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.job-card {
+  background: #161622;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 300px;
+  box-shadow: 0 0 12px #1c1c29;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px #62e1e980;
+}
+
+.job-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0f1120;
+  color: #f0f0f0;
+  padding: 60px 20px 30px;
+  font-family: "Poppins", sans-serif;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-block h4 {
+  font-size: 1.2rem;
+  color: #62e1e9;
+  margin-bottom: 15px;
+}
+
+.footer-block p,
+.footer-block a,
+.footer-block li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer-block a:hover {
+  color: #62e1e9;
+  text-decoration: underline;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.social-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-row a {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.disclaimer {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1c1e2e;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* RESPONSIVE JOB GRID */
+@media (max-width: 768px) {
+  .jobs-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header data-aos="fade-down">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="./assets/LOGO1.png" alt="Spark Logo" />
+          <div class="brand-text">
+            <span class="brand-name">Spark Digital</span>
+            <span class="brand-slogan">Igniting Innovation, Powering Progress</span>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html" class="active">Careers</a></li>
+          <li><a href="offerings.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CAREER CONTENT -->
+  <main>
+    <h1 data-aos="fade-up">Join Our Team</h1>
+    <div class="jobs-grid">
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>Frontend Developer</h3>
+        <p>React, HTML, CSS, JavaScript, Tailwind</p>
+      </div>
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Backend Developer</h3>
+        <p>Node.js, Express, Python, Databases</p>
+      </div>
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>UI/UX Designer</h3>
+        <p>Figma, Adobe XD, Design Systems</p>
+      </div>
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>QA Engineer</h3>
+        <p>Manual + Automated Testing Tools</p>
+      </div>
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="500">
+        <h3>Project Manager</h3>
+        <p>Agile, Scrum, Team & Client Leadership</p>
+      </div>
+      <div class="job-card" data-aos="zoom-in" data-aos-delay="600">
+        <h3>DevOps Engineer</h3>
+        <p>CI/CD, Cloud, Monitoring, Scaling</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up" data-aos-delay="200">
+    <div class="footer-grid">
+      <div class="footer-block">
+        <h4>Contact Us</h4>
+        <p><strong>Email:</strong> <a href="mailto:info@sparkdigital.com">info@sparkdigital.com</a></p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Address:</strong><br />Ground Floor, House 115,<br />Sector 7, Kurukshetra,<br />Haryana, India</p>
+      </div>
+      <div class="footer-block">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="offerings.html">Offerings</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="#">Facebook</a>
+          <a href="#">X</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+        </div>
+        <p class="disclaimer">
+          Spark Digital Solutions Pvt. Ltd. is not liable for misuse of its services. All operations comply with data protection laws.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Spark Digital Solutions Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+  </script>
+</body>
+</html>
